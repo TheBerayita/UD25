@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import ejercicio4.dto.Peliculas;
 import ejercicio4.service.PeliculasServiceImpl;
-
+ 
 @RestController
 @RequestMapping("/api")
 public class PeliculasController {
