@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS ALMACENES;
+DROP TABLE IF EXISTS CAJAS;
+
+CREATE TABLE ALMACENES (
+Codigo INT AUTO_INCREMENT PRIMARY KEY,
+Lugar VARCHAR(100),
+Capacidad int);
+
+INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Barcelona',100);
+INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Madrid',200);
+INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Jaen',300);
+INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Valencia',400);
+INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Galicia',500);
+
+
+
+CREATE TABLE CAJAS (
+NumReferencia INT AUTO_INCREMENT PRIMARY KEY,
+Contenido VARCHAR(100),
+Valor INT,
+Almacen INT,
+FOREIGN KEY (Almacen) REFERENCES ALMACENES (Codigo)
+);
+
+INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja1',100,1);
+INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja2',200,2);
+INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja3',300,3);
+INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja4',400,4);
+INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja5',500,5);
