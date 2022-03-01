@@ -1,29 +1,31 @@
-DROP TABLE IF EXISTS ALMACENES;
-DROP TABLE IF EXISTS CAJAS;
+DROP TABLE IF EXISTS Almacenes; 
+DROP TABLE IF EXISTS Cajas;
 
-CREATE TABLE ALMACENES (
-Codigo INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Almacenes (
+Codigo INT AUTO_INCREMENT,
 Lugar VARCHAR(100),
-Capacidad int);
+Capacidad int,
+PRIMARY KEY(Codigo)
+);
 
-INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Barcelona',100);
-INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Madrid',200);
-INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Jaen',300);
-INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Valencia',400);
-INSERT INTO ALMACENES (Lugar,Capacidad) VALUES ('Galicia',500);
+INSERT INTO Almacenes (Lugar,Capacidad) VALUES ('Barcelona',100);
+INSERT INTO Almacenes (Lugar,Capacidad) VALUES ('Madrid',200);
+INSERT INTO Almacenes (Lugar,Capacidad) VALUES ('Jaen',300);
+INSERT INTO Almacenes (Lugar,Capacidad) VALUES ('Valencia',400);
+INSERT INTO Almacenes (Lugar,Capacidad) VALUES ('Galicia',500);
 
 
 
-CREATE TABLE CAJAS (
+CREATE TABLE Cajas(
 NumReferencia INT AUTO_INCREMENT PRIMARY KEY,
 Contenido VARCHAR(100),
 Valor INT,
 Almacen INT,
-FOREIGN KEY (Almacen) REFERENCES ALMACENES (Codigo)
+FOREIGN KEY (Almacen) REFERENCES Almacenes (Codigo)
 );
 
-INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja1',100,1);
-INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja2',200,2);
-INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja3',300,3);
-INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja4',400,4);
-INSERT INTO CAJAS (Contenido,Valor,Almacen) VALUES ('Caja5',500,5);
+INSERT INTO Cajas(Contenido,Valor,Almacen) VALUES ('Caja1',100,1);
+INSERT INTO Cajas(Contenido,Valor,Almacen) VALUES ('Caja2',200,11);
+INSERT INTO Cajas(Contenido,Valor,Almacen) VALUES ('Caja3',300,21);
+INSERT INTO Cajas(Contenido,Valor,Almacen) VALUES ('Caja4',400,31);
+INSERT INTO Cajas(Contenido,Valor,Almacen) VALUES ('Caja5',500,41);
